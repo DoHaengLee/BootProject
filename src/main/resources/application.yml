@@ -1,0 +1,28 @@
+# Server
+server:
+  port: 8087
+
+# Spring
+spring:
+  # FreeMarker (instead of jsp)
+  freemarker: 
+    cache: false
+    charset: UTF-8
+    content-type: text/html
+    template-loader-path: classpath:/templates/
+    suffix: .ftl    # '20(2.2.x) default suffix updated to ftlh
+  # DB
+  datasource:
+    driver-class-name: org.h2.Driver
+    #url: jdbc:h2:~/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=KST &useSSL=false
+    url: jdbc:h2:~/test
+    username: sa
+    password: 
+  # JPA
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      # create : 실행할 때 마다 전체 재시작
+      # update : table을 drop하지 않고 그대로 사용
